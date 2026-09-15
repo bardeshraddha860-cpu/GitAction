@@ -1,0 +1,20 @@
+name: Cron Job Every 5 Minutes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  cron-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Job Started
+        run: echo "Cron job started!"
+
+      - name: Current Date and Time
+        run: date
+
+      - name: Completion Message
+        run: echo "Cron job completed!"
